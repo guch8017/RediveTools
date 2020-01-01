@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RediveTools</string>
+    <string name="action_settings">设置</string>
+    <string name="btn_backup">备份当前</string>
+    <string name="btn_clear">恢复至初始</string>
+    <string name="btn_delete">删除该记录</string>
+    <string name="btn_restore">恢复该记录</string>
+    <string name="description">账号描述</string>
+    <string name="server">服务器</string>
+    <string name="err_file_open">错误：无法打开文件\\n</string>
+    <string name="err_file_write">错误：无法写入文件</string>
+    <string name="err_root_permission">错误：无法获取root权限</string>
+    <string name="err_xml_add_attribute">错误：无法为XML添加属性</string>
+    <string name="err_xml_node">错误：无法取得账号信息。\\n请确认是否已经登陆账号</string>
+    <string name="err_xml_parse">错误：无法解析XML文件</string>
+    <string name="err_xml_root">错误：无法取得XML根节点</string>
+    <string name="delete_log_dialog">即将删除该条账户记录，此操作不可逆，是否继续</string>
+    <string name="delete_log">删除记录</string>
+    <string name="confirm">确认</string>
+    <string name="cancel">取消</string>
+    <string name="launch">启动</string>
+    <string name="success">操作成功</string>
+    <string name="success_dialog">操作成功完成，是否启动游戏</string>
+    <string name="restore">账号数据恢复</string>
+    <string name="restore_dialog">确定要将此账号数据恢复至游戏程式?注意，此操作不可逆。是否继续</string>
+    <string name="initialize">初始化游戏</string>
+    <string name="initialize_dialog">即将删除游戏中存储的账户数据，此操作不可逆，是否继续</string>
+    <string name="error">错误</string>
+    <string name="insert">输入账户数据</string>
+    <string name="saved_data">存储的账户信息</string>
+    <string name="err_sql">SQL错误：无法查询数据</string>
+</resources>

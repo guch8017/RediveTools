@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">RediveTools</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="btn_backup">Backup</string>
+    <string name="btn_clear">Clear</string>
+    <string name="btn_delete">Delete</string>
+    <string name="btn_restore">Restore</string>
+
+    <string name="Nn" translatable="false">NnB%2FZDJpMHx5cg%3D%3D</string>
+    <string name="MH" translatable="false">MHx5cg%3D%3D</string>
+    <string name="M3" translatable="false">M3F1YSNkOnF0</string>
+    <string name="description">Description</string>
+    <string name="server">Server</string>
+
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="error">Error</string>
+    <string name="err_root_permission">Error: Can\'t get root permission</string>
+    <string name="err_file_open">Error: Can\'t open file\n</string>
+    <string name="err_xml_parse">Error: Can\'t parse XML file</string>
+    <string name="err_xml_root">Error: Can\'t get root element of XML file</string>
+    <string name="err_file_write">Error: Can\'t write file\n</string>
+    <string name="err_xml_add_attribute">Error: Can\'t add account attribute to XML file</string>
+    <string name="err_xml_node">Error: Can\'t get account node: </string>
+    <string name="err_sql">SQL error. Can\'t query for data </string>
+
+    <string name="success">Success</string>
+    <string name="launch">Launch</string>
+    <string name="success_dialog">Launch game now?</string>
+
+    <string name="delete_log">Delete Log</string>
+    <string name="delete_log_dialog">The log seleted will be deleted. This operation can\'t be redone. Continue?</string>
+
+    <string name="initialize">Initialize Game Runtime</string>
+    <string name="initialize_dialog">Account data saved in the game will be deleted. This operation can\'t be redone. Continue?</string>
+
+    <string name="restore">Restore Account Data</string>
+    <string name="restore_dialog">Selected account data will be restored to game. This operation can\'t be redone. Continue?</string>
+
+    <string name="insert">Insert Account Data</string>
+
+    <string name="saved_data">Account Data</string>
+</resources>

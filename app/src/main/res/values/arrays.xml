@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="server_array">
+        <item>台一 美食殿堂</item>
+        <item>台二 真步真步王国</item>
+        <item>台三 破晓之星</item>
+    </string-array>
+    <string-array name="server_array_value">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+</resources>
