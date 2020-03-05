@@ -6,6 +6,7 @@
     <string name="btn_clear">Clear</string>
     <string name="btn_delete">Delete</string>
     <string name="btn_restore">Restore</string>
+    <string name="btn_export">Export</string>
 
     <string name="Nn" translatable="false">NnB%2FZDJpMHx5cg%3D%3D</string>
     <string name="MH" translatable="false">MHx5cg%3D%3D</string>

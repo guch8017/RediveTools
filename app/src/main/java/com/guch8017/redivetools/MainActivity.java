@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -18,12 +19,15 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.List;
+
+import cn.bingoogolapple.qrcode.zxing.QRCodeEncoder;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -103,7 +107,19 @@ public class MainActivity extends AppCompatActivity {
         server.setText(getResources().getStringArray(R.array.server_array)[data.server - 1]);
         AlertDialog.Builder builder = new AlertDialog.Builder(this).setTitle(getString(R.string.saved_data))
                 .setView(view)
-                .setPositiveButton(getString(R.string.confirm),null)
+                .setPositiveButton(getString(R.string.btn_export), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        String json = "{\"M3\":\""+data.M3+"\",\"MH\":\""+data.MH+"\",\"Nn\":\""+data.Nn+"\",\"description\":\""+data.description+"\",\"server\":"+data.server+"}";
+                        Bitmap bitmap = QRCodeEncoder.syncEncodeQRCode(json, 200);
+                        View qrView = LayoutInflater.from(MainActivity.this).inflate(R.layout.account_export_qr, null);
+                        ImageView qrImg = qrView.findViewById(R.id.qrImage);
+                        qrImg.setImageBitmap(bitmap);
+                        AlertDialog.Builder builder1 = new AlertDialog.Builder(MainActivity.this).setTitle("QRCode").setView(qrView);
+                        builder1.create().show();
+                        //Toast.makeText(MainActivity.this, json, Toast.LENGTH_LONG).show();
+                    }
+                })
                 .setNegativeButton(getString(R.string.restore), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
