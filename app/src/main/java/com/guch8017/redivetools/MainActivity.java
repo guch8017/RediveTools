@@ -67,6 +67,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // 二维码导入账号
+        Button btn_import = findViewById(R.id.btn_import);
+        btn_import.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
         // 列表显示
         ListView mListView = findViewById(R.id.account_list);
         adapter = new Adapter(this, query.GetLogs());
@@ -96,30 +105,22 @@ public class MainActivity extends AppCompatActivity {
         }
         View view = LayoutInflater.from(this).inflate(R.layout.account_dialog, null);
         TextView desc = view.findViewById(R.id.desc);
-        TextView m3 = view.findViewById(R.id.M3);
-        TextView mh = view.findViewById(R.id.MH);
-        TextView nn = view.findViewById(R.id.Nn);
+        //TextView m3 = view.findViewById(R.id.M3);
+        //TextView mh = view.findViewById(R.id.MH);
+        //TextView nn = view.findViewById(R.id.Nn);
         TextView server = view.findViewById(R.id.server);
+        ImageView qr = view.findViewById(R.id.qrImage);
         desc.setText(data.description);
-        m3.setText(data.M3);
-        mh.setText(data.MH);
-        nn.setText(data.Nn);
+        //m3.setText(data.M3);
+        //mh.setText(data.MH);
+        //nn.setText(data.Nn);
+        String json = "{\"M3\":\""+data.M3+"\",\"MH\":\""+data.MH+"\",\"Nn\":\""+data.Nn+"\",\"description\":\""+data.description+"\",\"server\":"+data.server+"}";
+        Bitmap bitmap = QRCodeEncoder.syncEncodeQRCode(json, 400);
+        qr.setImageBitmap(bitmap);
         server.setText(getResources().getStringArray(R.array.server_array)[data.server - 1]);
         AlertDialog.Builder builder = new AlertDialog.Builder(this).setTitle(getString(R.string.saved_data))
                 .setView(view)
-                .setPositiveButton(getString(R.string.btn_export), new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        String json = "{\"M3\":\""+data.M3+"\",\"MH\":\""+data.MH+"\",\"Nn\":\""+data.Nn+"\",\"description\":\""+data.description+"\",\"server\":"+data.server+"}";
-                        Bitmap bitmap = QRCodeEncoder.syncEncodeQRCode(json, 200);
-                        View qrView = LayoutInflater.from(MainActivity.this).inflate(R.layout.account_export_qr, null);
-                        ImageView qrImg = qrView.findViewById(R.id.qrImage);
-                        qrImg.setImageBitmap(bitmap);
-                        AlertDialog.Builder builder1 = new AlertDialog.Builder(MainActivity.this).setTitle("QRCode").setView(qrView);
-                        builder1.create().show();
-                        //Toast.makeText(MainActivity.this, json, Toast.LENGTH_LONG).show();
-                    }
-                })
+                .setPositiveButton(getString(R.string.confirm), null)
                 .setNegativeButton(getString(R.string.restore), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -213,6 +214,8 @@ public class MainActivity extends AppCompatActivity {
     private void alertRootPermission(){
         Toast.makeText(this, getString(R.string.err_root_permission),Toast.LENGTH_LONG).show();
     }
+
+
 
     private void alertError(String errorInfo){
         AlertDialog.Builder builder = new AlertDialog.Builder(this).setTitle(getString(R.string.error))

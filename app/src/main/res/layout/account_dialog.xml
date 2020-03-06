@@ -46,6 +46,22 @@
             android:paddingTop="10sp"
             android:paddingLeft="10sp"
             android:paddingBottom="10sp"
+            android:text="QRCode"
+            android:textColor="#000000"
+            android:textSize="20sp"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:id="@+id/qrImage"
+            android:contentDescription="QRCode"/>
+        <!--
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10sp"
+            android:paddingLeft="10sp"
+            android:paddingBottom="10sp"
             android:text="@string/M3"
             android:textColor="#000000"
             android:textSize="20sp"/>
@@ -87,6 +103,6 @@
             android:paddingTop="10sp"
             android:paddingLeft="10sp"
             android:paddingBottom="10sp"
-            android:id="@+id/Nn"/>
+            android:id="@+id/Nn"/>-->
     </LinearLayout>
 </ScrollView>

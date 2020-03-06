@@ -2,8 +2,8 @@
 <resources>
     <string name="app_name">RediveTools</string>
     <string name="action_settings">设置</string>
-    <string name="btn_backup">备份当前</string>
-    <string name="btn_clear">恢复至初始</string>
+    <string name="btn_backup">备份</string>
+    <string name="btn_clear">初始化</string>
     <string name="btn_delete">删除记录</string>
     <string name="btn_restore">恢复记录</string>
     <string name="description">账号描述</string>
@@ -31,4 +31,5 @@
     <string name="saved_data">存储的账户信息</string>
     <string name="err_sql">SQL错误：无法查询数据</string>
     <string name="btn_export">导出记录</string>
+    <string name="btn_import">导入</string>
 </resources>

@@ -25,6 +25,12 @@
                     android:layout_weight="1"
                     android:id="@+id/btn_clear"
                     android:text="@string/btn_clear"/>
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/btn_import"
+                    android:text="@string/btn_import"/>
 
             </LinearLayout>
             <ListView
